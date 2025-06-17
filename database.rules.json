@@ -1,0 +1,26 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid",
+        ".validate": "newData.hasChildren(['uid', 'email', 'createdAt'])",
+        "sessions": {
+          ".indexOn": ["createdAt"],
+          "$sessionId": {
+            ".validate": "newData.hasChildren(['userId', 'prompt', 'transcript', 'createdAt'])"
+          }
+        },
+        "vocabulary": {
+          ".indexOn": ["createdAt", "learned"],
+          "$wordId": {
+            ".validate": "newData.hasChildren(['userId', 'word', 'definition', 'createdAt'])"
+          }
+        },
+        "progress": {
+          ".indexOn": ["createdAt"]
+        }
+      }
+    }
+  }
+}
