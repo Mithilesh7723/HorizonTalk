@@ -1,30 +1,34 @@
-# Horizontalk web app
+# Horizontalk
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+**An AI-powered English and Communication Learning Web App**  
+_Crafted at Horizon Flare – Innovation Studio_
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/hackersparadise192-gmailcoms-projects/v0-horizontalk-web-app)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/0hgUUIIlemR)
+---
 
-## Overview
+## 🌟 Overview
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+**Horizontalk** is an innovative web application designed to help users master English language and communication skills. Combining AI-driven learning modules, interactive practice exercises, and personalized feedback, Horizontalk empowers learners to improve fluency and confidence—anytime, anywhere.
 
-## Deployment
+---
 
-Your project is live at:
+## ✨ Features
 
-**[https://vercel.com/hackersparadise192-gmailcoms-projects/v0-horizontalk-web-app](https://vercel.com/hackersparadise192-gmailcoms-projects/v0-horizontalk-web-app)**
+✅ **AI-Powered Learning Assistant**  
+- Get instant explanations, corrections, and suggestions tailored to your skill level.  
 
-## Build your app
+✅ **Interactive Practice Modules**  
+- Grammar exercises  
+- Vocabulary building  
+- Pronunciation training  
 
-Continue building your app on:
+✅ **Conversation Simulations**  
+- Practice real-world dialogues with AI-generated scenarios.  
 
-**[https://v0.dev/chat/projects/0hgUUIIlemR](https://v0.dev/chat/projects/0hgUUIIlemR)**
+✅ **Progress Tracking & Analytics**  
+- Monitor your improvement over time with detailed reports and insights.  
 
-## How It Works
+✅ **Accessible Anytime, Anywhere**  
+- Fully responsive design for desktops, tablets, and mobiles.
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+---
+
