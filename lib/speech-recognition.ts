@@ -142,8 +142,8 @@ export class BrowserTextToSpeech {
 
     // Stop any current speech
     this.synth.cancel()
-
-    const utterance = new SpeechSynthesisUtterance(text)
+    setTimeout(() => {
+      const utterance = new SpeechSynthesisUtterance(text)
 
     // Find English voice
     const englishVoice =
@@ -160,7 +160,7 @@ export class BrowserTextToSpeech {
     utterance.lang = "en-US"
 
     this.synth.speak(utterance)
-  }
+  },200);
 
   stop(): void {
     if (this.synth) {
