@@ -183,8 +183,8 @@ export function LandingPage() {
   ]
 
   const stats = [
-    { number: "10,000+", label: "Active Learners" },
-    { number: "50,000+", label: "Practice Sessions" },
+    { number: "100+", label: "Active Learners" },
+    { number: "500+", label: "Practice Sessions" },
     { number: "95%", label: "Improvement Rate" },
     { number: "24/7", label: "AI Availability" },
   ]
