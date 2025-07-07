@@ -147,15 +147,16 @@ export class BrowserTextToSpeech {
 
     // Find English voice
     const englishVoice =
-      this.voices.find((voice) => voice.lang.startsWith("en") && voice.name.includes("Google")) ||
-      this.voices.find((voice) => voice.lang.startsWith("en"))
+      this.voices.find((voice) => voice.name === "Google UK English Female") ||
+      this.voices.find((voice) => voice.name === "Google US English") ||
+      this.voices.find((voice) => voice.lang.startsWith("en"));
 
     if (englishVoice) {
       utterance.voice = englishVoice
     }
 
     utterance.rate = options.rate || 0.8
-    utterance.pitch = options.pitch || 1
+    utterance.pitch = options.pitch || 1.2
     utterance.volume = options.volume || 1
     utterance.lang = "en-US"
 
