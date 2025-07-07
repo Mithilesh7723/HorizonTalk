@@ -511,31 +511,34 @@ export function LandingPage() {
       </section>
 
       {/* CTA Section */}
-     <section className="py-16 md:py-24 px-4 bg-gradient-to-r from-purple-50 via-white to-purple-50">
-        <div className="container mx-auto text-center text-white">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Transform Your English?</h2>
-          <p className="text-lg md:text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Join thousands of learners who have already improved their communication skills with our AI-powered platform
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              onClick={handleGetStarted}
-              className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 h-auto"
-            >
-              {user ? "Go to Dashboard" : "Start Your Journey"}
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-blue-600 hover:bg-white hover:text-blue-600 text-lg px-8 py-4 h-auto"
-            >
-              Learn More
-            </Button>
-          </div>
-        </div>
-      </section>
+    <section className="py-16 md:py-24 px-4 bg-gradient-to-r from-purple-50 via-white to-purple-50">
+  <div className="container mx-auto text-center text-gray-800">
+    <h2 className="text-3xl md:text-5xl font-bold mb-6">
+      Ready to Transform Your English?
+    </h2>
+    <p className="text-lg md:text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+      Join thousands of learners who have already improved their communication skills with our AI-powered platform
+    </p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <Button
+        size="lg"
+        onClick={handleGetStarted}
+        className="bg-blue-600 text-white hover:bg-blue-700 text-lg px-8 py-4 h-auto"
+      >
+        {user ? "Go to Dashboard" : "Start Your Journey"}
+        <ArrowRight className="w-5 h-5 ml-2" />
+      </Button>
+      <Button
+        size="lg"
+        variant="outline"
+        className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white text-lg px-8 py-4 h-auto"
+      >
+        Learn More
+      </Button>
+    </div>
+  </div>
+</section>
+
 
       {/* Footer */}
       <footer className="py-12 md:py-16 px-4 bg-gray-900 text-white">
