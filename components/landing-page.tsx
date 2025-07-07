@@ -511,7 +511,7 @@ export function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 px-4 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800">
+     <section className="py-16 md:py-24 px-4 bg-gradient-to-r from-purple-50 via-white to-purple-50">
         <div className="container mx-auto text-center text-white">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Transform Your English?</h2>
           <p className="text-lg md:text-xl mb-8 opacity-90 max-w-3xl mx-auto">
@@ -558,22 +558,22 @@ export function LandingPage() {
               <h3 className="font-semibold mb-4">Features</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#features" className="hover:text-white transition-colors">
                     Speech Analysis
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#features" className="hover:text-white transition-colors">
                     AI Coaching
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#features" className="hover:text-white transition-colors">
                     Vocabulary Builder
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#features" className="hover:text-white transition-colors">
                     Progress Tracking
                   </a>
                 </li>
@@ -615,12 +615,12 @@ export function LandingPage() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="https://x.com/horizonflare" className="hover:text-white transition-colors">
                     Twitter
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="https://www.linkedin.com/company/horizon-flare" className="hover:text-white transition-colors">
                     LinkedIn
                   </a>
                 </li>
@@ -634,7 +634,7 @@ export function LandingPage() {
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 HorizonTalk. All rights reserved. Made with ❤️ for English learners worldwide.</p>
+            <p>&copy; 2025 HorizonTalk. All rights reserved. Crafted with 💖 at Horizon Flare Innovation Studio.</p>
           </div>
         </div>
       </footer>
