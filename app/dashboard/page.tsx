@@ -1,10 +1,10 @@
 import { DashboardLayout } from "@/components/dashboard-layout"
-import { VocabularyPage } from "@/components/vocabulary-page"
+import { DashboardOverview } from "@/components/dashboard-overview"
 
-export default function Vocabulary() {
+export default function Dashboard() {
   return (
     <DashboardLayout>
-      <VocabularyPage />
+      <DashboardOverview />
     </DashboardLayout>
   )
 }
