@@ -173,6 +173,7 @@ export class BrowserTextToSpeech {
 stop(): void {
   if (this.synth) {
     this.synth.cancel();
+    }
   }
 }
 
