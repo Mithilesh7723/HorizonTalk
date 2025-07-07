@@ -137,35 +137,42 @@ export class BrowserTextToSpeech {
     return this.synth !== null
   }
 
-  speak(text: string, options: { rate?: number; pitch?: number; volume?: number } = {}): void {
-    if (!this.synth) return
+  speak(
+  text: string,
+  options: { rate?: number; pitch?: number; volume?: number } = {}
+): void {
+  if (!this.synth) return;
 
-    // Stop any current speech
-    this.synth.cancel()
-    setTimeout(() => {
-      const utterance = new SpeechSynthesisUtterance(text)
+  if (this.synth.speaking) {
+    this.synth.cancel();
+  }
 
-    // Find English voice
+  const delay = this.synth.speaking ? 300 : 0;
+
+  setTimeout(() => {
+    const utterance = new SpeechSynthesisUtterance(text);
+
     const englishVoice =
       this.voices.find((voice) => voice.name === "Google UK English Female") ||
       this.voices.find((voice) => voice.name === "Google US English") ||
       this.voices.find((voice) => voice.lang.startsWith("en"));
 
     if (englishVoice) {
-      utterance.voice = englishVoice
+      utterance.voice = englishVoice;
     }
 
-    utterance.rate = options.rate || 0.8
-    utterance.pitch = options.pitch || 1.2
-    utterance.volume = options.volume || 1
-    utterance.lang = "en-US"
+    utterance.rate = options.rate ?? 0.8;
+    utterance.pitch = options.pitch ?? 1.2;
+    utterance.volume = options.volume ?? 1;
+    utterance.lang = "en-US";
 
-    this.synth.speak(utterance)
-  },500);
+    this.synth!.speak(utterance);
+  }, delay);
+}
 
-  stop(): void {
-    if (this.synth) {
-      this.synth.cancel()
-    }
+stop(): void {
+  if (this.synth) {
+    this.synth.cancel();
   }
 }
+
