@@ -160,7 +160,7 @@ export class BrowserTextToSpeech {
     utterance.lang = "en-US"
 
     this.synth.speak(utterance)
-  },200);
+  },500);
 
   stop(): void {
     if (this.synth) {
