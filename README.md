@@ -83,12 +83,12 @@ This initiative aims to make **high-quality language coaching accessible online*
 - **Vocabulary Building:** Grow your vocabulary with daily words and examples.
 - **Pronunciation Improvement:** Listen to natural-sounding text-to-speech playback.
 - **Progress Tracking:** Review your performance over time to stay motivated.
+- **AI-powered conversation simulations.
 
 ---
 
 ## 📝 Future Plans
 
-- Add AI-powered conversation simulations.
 - Integrate gamified learning modules.
 - Expand to other languages beyond English.
 - Build mobile-native versions for iOS and Android.
