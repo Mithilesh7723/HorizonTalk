@@ -279,10 +279,12 @@ export function LandingPage() {
               <Play className="w-5 h-5 mr-2" />
               {user ? "Go to Dashboard" : "Start Learning Free"}
             </Button>
+            <Link href="/demo">
             <Button size="lg" variant="outline" className="text-lg px-8 py-4 h-auto">
               <Play className="w-5 h-5 mr-2" />
               Watch Demo
             </Button>
+            </Link>
           </div>
 
           {/* Stats */}
