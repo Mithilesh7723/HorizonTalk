@@ -40,7 +40,7 @@ Requirements:
 
 Make the words engaging and practical for everyday English usage.`,
     })
-
+    console.log("Gemini raw result:", result);
     return Response.json(result.object)
   } catch (error) {
     console.error("Daily words generation error:", error)
