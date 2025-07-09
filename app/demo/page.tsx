@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -871,6 +872,7 @@ export default function DemoPage() {
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link href="/app">
                   <Button
                     size="lg"
                     className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg shadow-xl"
@@ -878,8 +880,10 @@ export default function DemoPage() {
                     <Play className="w-5 h-5 mr-2" />
                     Start Learning Now
                   </Button>
+                    </Link>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link href="/app">
                   <Button
                     size="lg"
                     variant="outline"
@@ -887,6 +891,7 @@ export default function DemoPage() {
                   >
                     Learn More
                   </Button>
+                    </Link>
                 </motion.div>
               </div>
               <div className="flex items-center justify-center space-x-8 text-sm text-gray-500 pt-4">
