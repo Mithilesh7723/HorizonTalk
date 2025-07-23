@@ -111,9 +111,9 @@ const SoundWave = ({ isActive }: { isActive: boolean }) => {
           animate={
             isActive
               ? {
-                  height: [4, 20, 4],
-                  opacity: [0.4, 1, 0.4],
-                }
+                height: [4, 20, 4],
+                opacity: [0.4, 1, 0.4],
+              }
               : { height: 4, opacity: 0.4 }
           }
           transition={{
@@ -243,11 +243,10 @@ export default function DemoPage() {
             return (
               <div key={step.id} className={`flex items-center ${index < demoSteps.length - 1 ? "flex-1" : ""}`}>
                 <motion.div
-                  className={`relative w-12 h-12 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-500 ${
-                    index <= currentStep
-                      ? `bg-gradient-to-r ${step.color} text-white shadow-lg`
-                      : "bg-gray-200 text-gray-600"
-                  }`}
+                  className={`relative w-12 h-12 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-500 ${index <= currentStep
+                    ? `bg-gradient-to-r ${step.color} text-white shadow-lg`
+                    : "bg-gray-200 text-gray-600"
+                    }`}
                   animate={index === currentStep ? { scale: [1, 1.1, 1] } : { scale: 1 }}
                   transition={{ duration: 0.5 }}
                 >
@@ -363,17 +362,38 @@ export default function DemoPage() {
                     transition={{ delay: 0.9 + index * 0.1 }}
                     whileHover={{ y: -5, transition: { duration: 0.2 } }}
                   >
+
                     <Card
-                      className={`border-2 border-${feature.color}-100 hover:border-${feature.color}-200 transition-all duration-300 group`}
+                      className={`h-full border-2 transition-all duration-300 group bg-white rounded-lg shadow-sm hover:shadow-md ${feature.color === 'blue'
+                          ? 'border-blue-100 hover:border-blue-200'
+                          : feature.color === 'purple'
+                            ? 'border-purple-100 hover:border-purple-200'
+                            : 'border-green-100 hover:border-green-200'
+                        }`}
                     >
-                      <CardContent className="p-6 text-center">
-                        <motion.div whileHover={{ scale: 1.1, rotate: 5 }} transition={{ duration: 0.2 }}>
-                          <feature.icon className={`w-12 h-12 text-${feature.color}-600 mx-auto mb-4`} />
-                        </motion.div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{feature.title}</h4>
-                        <p className="text-sm text-gray-600">{feature.desc}</p>
+                      <CardContent className="p-6 text-center h-full flex flex-col justify-between">
+                        <div className="flex flex-col items-center">
+                          <motion.div whileHover={{ scale: 1.1, rotate: 5 }} transition={{ duration: 0.2 }}>
+                            <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${feature.color === 'blue'
+                                ? 'bg-blue-50'
+                                : feature.color === 'purple'
+                                  ? 'bg-purple-50'
+                                  : 'bg-green-50'
+                              }`}>
+                              <feature.icon className={`w-8 h-8 ${feature.color === 'blue'
+                                  ? 'text-blue-600'
+                                  : feature.color === 'purple'
+                                    ? 'text-purple-600'
+                                    : 'text-green-600'
+                                }`} />
+                            </div>
+                          </motion.div>
+                          <h4 className="font-semibold text-gray-900 mb-3 text-lg">{feature.title}</h4>
+                          <p className="text-sm text-gray-600 leading-relaxed">{feature.desc}</p>
+                        </div>
                       </CardContent>
                     </Card>
+
                   </motion.div>
                 ))}
               </motion.div>
@@ -414,11 +434,10 @@ export default function DemoPage() {
                           size="lg"
                           onClick={startRecording}
                           disabled={isRecording}
-                          className={`w-32 h-32 rounded-full text-white shadow-2xl transition-all duration-300 ${
-                            isRecording
-                              ? "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
-                              : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                          }`}
+                          className={`w-32 h-32 rounded-full text-white shadow-2xl transition-all duration-300 ${isRecording
+                            ? "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+                            : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                            }`}
                         >
                           {isRecording ? (
                             <div className="flex flex-col items-center space-y-2">
@@ -628,6 +647,9 @@ export default function DemoPage() {
                     <span>Daily Vocabulary Builder</span>
                   </CardTitle>
                 </CardHeader>
+
+
+
                 <CardContent>
                   <div className="space-y-6">
                     {mockVocabulary.map((vocab, index) => (
@@ -637,16 +659,17 @@ export default function DemoPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.3 }}
                         whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                        className={`p-6 rounded-xl border-2 transition-all duration-300 ${
-                          index === currentWord
-                            ? "border-purple-300 bg-gradient-to-r from-purple-50 to-indigo-50 shadow-lg"
-                            : "border-gray-200 bg-white hover:border-purple-200"
-                        }`}
+                        className={`p-4 sm:p-6 rounded-xl border-2 transition-all duration-300 ${index === currentWord
+                          ? "border-purple-300 bg-gradient-to-r from-purple-50 to-indigo-50 shadow-lg"
+                          : "border-gray-200 bg-white hover:border-purple-200"
+                          }`}
                       >
-                        <div className="flex items-center justify-between mb-4">
+                        {/* Header section with word, badge, and pronunciation */}
+                        <div className="mb-4 space-y-3">
+                          {/* Word and badge row */}
                           <div className="flex items-center space-x-3">
                             <motion.h4
-                              className="text-2xl font-bold text-gray-900"
+                              className="text-xl sm:text-2xl font-bold text-gray-900 flex-1 min-w-0"
                               animate={index === currentWord ? { scale: [1, 1.05, 1] } : {}}
                               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                             >
@@ -654,30 +677,34 @@ export default function DemoPage() {
                             </motion.h4>
                             <Badge
                               variant={vocab.difficulty === "Advanced" ? "destructive" : "secondary"}
-                              className="text-xs"
+                              className="text-xs shrink-0"
                             >
                               {vocab.difficulty}
                             </Badge>
                           </div>
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={playPronunciation}
-                            disabled={isPlaying}
-                            className="flex items-center space-x-2 bg-transparent hover:bg-purple-50"
-                          >
-                            <motion.div
-                              animate={isPlaying ? { scale: [1, 1.2, 1] } : {}}
-                              transition={{ duration: 0.3, repeat: isPlaying ? Number.POSITIVE_INFINITY : 0 }}
+
+                          {/* Pronunciation button row - full width on mobile */}
+                          <div className="w-full">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={playPronunciation}
+                              disabled={isPlaying}
+                              className="flex items-center justify-center space-x-2 bg-transparent hover:bg-purple-50 w-full sm:w-auto"
                             >
-                              {isPlaying ? <Pause className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-                            </motion.div>
-                            <span>{isPlaying ? "Playing..." : "Pronounce"}</span>
-                          </Button>
+                              <motion.div
+                                animate={isPlaying ? { scale: [1, 1.2, 1] } : {}}
+                                transition={{ duration: 0.3, repeat: isPlaying ? Number.POSITIVE_INFINITY : 0 }}
+                              >
+                                {isPlaying ? <Pause className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                              </motion.div>
+                              <span className="text-sm">{isPlaying ? "Playing..." : "Pronounce"}</span>
+                            </Button>
+                          </div>
                         </div>
 
                         <motion.p
-                          className="text-gray-700 mb-4 leading-relaxed"
+                          className="text-gray-700 mb-4 leading-relaxed text-sm sm:text-base"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: 0.2 + index * 0.3 }}
@@ -686,12 +713,12 @@ export default function DemoPage() {
                         </motion.p>
 
                         <motion.div
-                          className="bg-gradient-to-r from-gray-50 to-purple-50 p-4 rounded-lg border"
+                          className="bg-gradient-to-r from-gray-50 to-purple-50 p-3 sm:p-4 rounded-lg border"
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.4 + index * 0.3 }}
                         >
-                          <p className="text-sm text-gray-600 leading-relaxed">
+                          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                             <strong className="text-purple-700">Example:</strong> {vocab.example}
                           </p>
                         </motion.div>
@@ -699,6 +726,11 @@ export default function DemoPage() {
                     ))}
                   </div>
                 </CardContent>
+
+
+
+
+
               </Card>
             </motion.div>
           )}
@@ -873,25 +905,25 @@ export default function DemoPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link href="/app">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg shadow-xl"
-                  >
-                    <Play className="w-5 h-5 mr-2" />
-                    Start Learning Now
-                  </Button>
-                    </Link>
+                    <Button
+                      size="lg"
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg shadow-xl"
+                    >
+                      <Play className="w-5 h-5 mr-2" />
+                      Start Learning Now
+                    </Button>
+                  </Link>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link href="/app">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg bg-transparent"
-                  >
-                    Learn More
-                  </Button>
-                    </Link>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg bg-transparent"
+                    >
+                      Learn More
+                    </Button>
+                  </Link>
                 </motion.div>
               </div>
               <div className="flex items-center justify-center space-x-8 text-sm text-gray-500 pt-4">
